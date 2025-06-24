@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/use-translation";
 import { Leaf, Dumbbell, Waves } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const resortServices = [
     {
@@ -61,7 +62,9 @@ export default function ResortPage() {
                 <CardDescription className="mb-6">
                     {t(`resortPage.${service.id}.description`)}
                 </CardDescription>
-                <Button className="w-full">{t(`resortPage.${service.id}.action`)}</Button>
+                <Button asChild className="w-full">
+                  <Link href="/availability">{t(`resortPage.${service.id}.action`)}</Link>
+                </Button>
             </CardContent>
           </Card>
         ))}
