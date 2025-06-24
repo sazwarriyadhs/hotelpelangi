@@ -110,5 +110,31 @@
         "invalidForm": "Invalid form data. Please ensure all fields are filled out.",
         "unexpected": "An unexpected error occurred while fetching the pricing suggestion. Please try again later."
     }
+  },
+  "restaurantBooking": {
+    "title": "Reserve Your Table",
+    "description": "Dine with us. Book your table for an unforgettable culinary experience.",
+    "guestName": "Guest Full Name",
+    "guestNamePlaceholder": "e.g., Jane Smith",
+    "guests": "Number of Guests",
+    "guestsPlaceholder": "Select guests",
+    "reservationDate": "Date",
+    "reservationDatePlaceholder": "Select date",
+    "reservationTime": "Time",
+    "reservationTimePlaceholder": "Select time",
+    "submit": "Reserve Table",
+    "submitting": "Reserving...",
+    "success": {
+        "title": "Reservation Confirmed!",
+        "message": "Your table has been successfully reserved. Your booking ID is"
+    },
+    "error": {
+        "title": "Reservation Failed",
+        "guestNameRequired": "Guest name is required.",
+        "reservationDateRequired": "Reservation date is required.",
+        "reservationTimeRequired": "Time is required.",
+        "guestsRequired": "Number of guests is required.",
+        "unexpected": "An unexpected error occurred. Please try again later."
+    }
   }
 }

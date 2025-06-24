@@ -13,6 +13,7 @@ import { BedDouble, Utensils, Waves } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BookingForm } from '@/components/booking-form';
+import { RestaurantBookingForm } from '@/components/restaurant-booking-form';
 
 
 const heroSlides = [
@@ -99,6 +100,12 @@ export default function LandingPage() {
         <section id="booking" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <BookingForm />
+          </div>
+        </section>
+
+        <section id="restaurant-booking" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <RestaurantBookingForm />
           </div>
         </section>
 

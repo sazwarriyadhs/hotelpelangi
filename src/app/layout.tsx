@@ -44,20 +44,28 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
           <Hotel className="h-6 w-6 text-primary" />
           <span className="font-headline text-2xl font-bold text-primary">Serenity</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
           <Link
-            href="#features"
+            href="/#features"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
             Features
           </Link>
           <Link
-            href="#rooms"
+            href="/#rooms"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
             Rooms
           </Link>
-          <Button>Book Now</Button>
+          <Link
+            href="/#restaurant-booking"
+            className="text-sm font-medium hover:underline underline-offset-4"
+          >
+            Restaurant
+          </Link>
+          <Button asChild>
+            <Link href="/#booking">Book Now</Link>
+          </Button>
         </nav>
       </header>
       <main className="flex-1">{children}</main>

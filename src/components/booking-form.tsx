@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DatePicker } from "@/components/ui/datepicker";
-import { Loader2, CheckCircle } from "lucide-react";
+import { Loader2, CheckCircle, BedDouble } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 const initialState = {
@@ -58,7 +58,8 @@ export function BookingForm() {
 
   return (
     <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader className="text-center">
+      <CardHeader className="text-center space-y-2">
+        <BedDouble className="mx-auto h-12 w-12 text-primary" />
         <CardTitle className="text-3xl font-headline">{t('booking.title')}</CardTitle>
         <CardDescription>{t('booking.description')}</CardDescription>
       </CardHeader>

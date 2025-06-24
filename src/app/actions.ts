@@ -2,6 +2,7 @@
 
 import { suggestOptimalPricing, SuggestOptimalPricingOutput } from "@/ai/flows/suggest-optimal-pricing";
 import { createReservation, CreateReservationOutput } from "@/ai/flows/create-reservation";
+import { createRestaurantReservation, CreateRestaurantReservationOutput } from "@/ai/flows/create-restaurant-reservation";
 import { z } from "zod";
 
 const pricingFormSchema = z.object({
@@ -101,6 +102,57 @@ export async function createBookingAction(
     return {
       data: null,
       error: "booking.error.unexpected",
+      message: null,
+    };
+  }
+}
+
+
+const restaurantBookingFormSchema = z.object({
+  guestName: z.string().min(1, "restaurantBooking.error.guestNameRequired"),
+  reservationDate: z.string().min(1, "restaurantBooking.error.reservationDateRequired"),
+  reservationTime: z.string().min(1, "restaurantBooking.error.reservationTimeRequired"),
+  guests: z.string().min(1, "restaurantBooking.error.guestsRequired"),
+});
+
+type RestaurantBookingState = {
+  data: CreateRestaurantReservationOutput | null;
+  error: string | null;
+  message: string | null;
+};
+
+export async function createRestaurantBookingAction(
+  prevState: RestaurantBookingState,
+  formData: FormData
+): Promise<RestaurantBookingState> {
+  const validatedFields = restaurantBookingFormSchema.safeParse({
+    guestName: formData.get("guestName"),
+    reservationDate: formData.get("reservationDate"),
+    reservationTime: formData.get("reservationTime"),
+    guests: formData.get("guests"),
+  });
+
+  if (!validatedFields.success) {
+    const firstError = validatedFields.error.errors[0].message;
+    return {
+      data: null,
+      error: firstError,
+      message: null,
+    };
+  }
+
+  try {
+    const result = await createRestaurantReservation(validatedFields.data);
+    if(result.success) {
+        return { data: result, error: null, message: result.message };
+    } else {
+        return { data: null, error: result.message, message: null };
+    }
+  } catch (e) {
+    console.error(e);
+    return {
+      data: null,
+      error: "restaurantBooking.error.unexpected",
       message: null,
     };
   }

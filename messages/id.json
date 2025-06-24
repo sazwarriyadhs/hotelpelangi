@@ -110,5 +110,31 @@
         "invalidForm": "Data formulir tidak valid. Harap pastikan semua bidang diisi.",
         "unexpected": "Terjadi kesalahan tak terduga saat mengambil saran harga. Silakan coba lagi nanti."
     }
+  },
+  "restaurantBooking": {
+    "title": "Reservasi Meja Anda",
+    "description": "Makan bersama kami. Pesan meja Anda untuk pengalaman kuliner yang tak terlupakan.",
+    "guestName": "Nama Lengkap Tamu",
+    "guestNamePlaceholder": "cth., Siti Lestari",
+    "guests": "Jumlah Tamu",
+    "guestsPlaceholder": "Pilih jumlah tamu",
+    "reservationDate": "Tanggal",
+    "reservationDatePlaceholder": "Pilih tanggal",
+    "reservationTime": "Waktu",
+    "reservationTimePlaceholder": "Pilih waktu",
+    "submit": "Reservasi Meja",
+    "submitting": "Mereservasi...",
+    "success": {
+        "title": "Reservasi Dikonfirmasi!",
+        "message": "Meja Anda telah berhasil dipesan. ID pemesanan Anda adalah"
+    },
+    "error": {
+        "title": "Reservasi Gagal",
+        "guestNameRequired": "Nama tamu wajib diisi.",
+        "reservationDateRequired": "Tanggal reservasi wajib diisi.",
+        "reservationTimeRequired": "Waktu wajib diisi.",
+        "guestsRequired": "Jumlah tamu wajib diisi.",
+        "unexpected": "Terjadi kesalahan tak terduga. Silakan coba lagi nanti."
+    }
   }
 }
