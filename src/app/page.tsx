@@ -7,6 +7,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import { BedDouble, Utensils, Waves } from 'lucide-react';
@@ -31,6 +33,39 @@ const heroSlides = [
     src: "https://placehold.co/1920x1080.png",
     alt: "Stunning resort pool view",
     hint: "resort swimming pool",
+  },
+];
+
+const gallerySlides = [
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "Restaurant dining area",
+    hint: "fine dining restaurant",
+  },
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "Spa treatment room",
+    hint: "spa therapy room",
+  },
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "Hotel gym with equipment",
+    hint: "hotel gym",
+  },
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "View from a hotel room balcony",
+    hint: "hotel balcony view",
+  },
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "Cocktails by the pool",
+    hint: "poolside cocktails",
+  },
+  {
+    src: "https://placehold.co/600x400.png",
+    alt: "Hotel conference room",
+    hint: "conference room",
   },
 ];
 
@@ -240,6 +275,55 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">
+                  Galeri
+                </div>
+                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">
+                  Jelajahi Galeri Kami
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Lihatlah lebih dekat keindahan dan kemewahan yang menanti Anda di Serenity Hotel.
+                </p>
+              </div>
+            </div>
+            <div className="py-12">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {gallerySlides.map((slide, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-1">
+                        <div className="overflow-hidden rounded-lg">
+                          <Image
+                            src={slide.src}
+                            alt={slide.alt}
+                            width={600}
+                            height={400}
+                            className="aspect-video w-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                            data-ai-hint={slide.hint}
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="ml-12 hidden sm:flex" />
+                <CarouselNext className="mr-12 hidden sm:flex" />
+              </Carousel>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );

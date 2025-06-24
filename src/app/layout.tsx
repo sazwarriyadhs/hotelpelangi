@@ -63,6 +63,12 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
           >
             Restaurant
           </Link>
+           <Link
+            href="/#gallery"
+            className="text-sm font-medium hover:underline underline-offset-4"
+          >
+            Galeri
+          </Link>
           <Button asChild>
             <Link href="/#booking">Book Now</Link>
           </Button>
