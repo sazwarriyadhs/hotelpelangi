@@ -1,8 +1,8 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { createBookingAction } from "@/app/actions";
-import { useEffect, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "@/hooks/use-translation";
 
@@ -39,7 +39,7 @@ function SubmitButton() {
 }
 
 export function BookingForm() {
-  const [state, formAction] = useFormState(createBookingAction, initialState);
+  const [state, formAction] = useActionState(createBookingAction, initialState);
   const { toast } = useToast();
   const { t } = useTranslation();
   
