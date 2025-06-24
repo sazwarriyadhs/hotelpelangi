@@ -41,6 +41,41 @@
       "sofia": "checked out from Room 112."
     }
   },
+  "booking": {
+    "title": "Book Your Stay",
+    "description": "Find the perfect room for your getaway. Complete the form below to secure your reservation.",
+    "guestName": "Guest Full Name",
+    "guestNamePlaceholder": "e.g., John Doe",
+    "guests": "Number of Guests",
+    "guestsPlaceholder": "Select guests",
+    "roomType": "Room Type",
+    "roomTypePlaceholder": "Select room type",
+    "roomTypes": {
+        "deluxe": "Deluxe Room",
+        "family": "Family Suite",
+        "presidential": "Presidential Suite"
+    },
+    "checkIn": "Check-in Date",
+    "checkInPlaceholder": "Select date",
+    "checkOut": "Check-out Date",
+    "checkOutPlaceholder": "Select date",
+    "submit": "Check Availability & Book",
+    "submitting": "Booking...",
+    "success": {
+        "title": "Reservation Confirmed!",
+        "message": "Your booking has been successfully processed. Your booking ID is"
+    },
+    "error": {
+        "title": "Booking Failed",
+        "guestNameRequired": "Guest name is required.",
+        "checkInRequired": "Check-in date is required.",
+        "checkOutRequired": "Check-out date is required.",
+        "guestsRequired": "Number of guests is required.",
+        "roomTypeRequired": "Room type is required.",
+        "invalidDateRange": "Check-out date must be after check-in date.",
+        "unexpected": "An unexpected error occurred. Please try again later."
+    }
+  },
   "pricing": {
     "title": "Dynamic Pricing Tool",
     "description": "Leverage AI to suggest optimal room pricing based on real-time demand, seasonality, and competitor rates.",

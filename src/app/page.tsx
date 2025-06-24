@@ -12,6 +12,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { BedDouble, Utensils, Waves } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BookingForm } from '@/components/booking-form';
 
 
 const heroSlides = [
@@ -82,16 +83,22 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="#">
+                <Link href="#booking">
                   <Button size="lg">Book Your Stay</Button>
                 </Link>
-                <Link href="#">
+                <Link href="#rooms">
                   <Button variant="secondary" size="lg">
                     Explore Rooms
                   </Button>
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="booking" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div className="container px-4 md:px-6">
+            <BookingForm />
           </div>
         </section>
 

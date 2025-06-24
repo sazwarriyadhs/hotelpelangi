@@ -41,6 +41,41 @@
       "sofia": "check-out dari Kamar 112."
     }
   },
+  "booking": {
+    "title": "Pesan Penginapan Anda",
+    "description": "Temukan kamar yang sempurna untuk liburan Anda. Lengkapi formulir di bawah ini untuk mengamankan reservasi Anda.",
+    "guestName": "Nama Lengkap Tamu",
+    "guestNamePlaceholder": "cth., Budi Santoso",
+    "guests": "Jumlah Tamu",
+    "guestsPlaceholder": "Pilih jumlah tamu",
+    "roomType": "Tipe Kamar",
+    "roomTypePlaceholder": "Pilih tipe kamar",
+    "roomTypes": {
+        "deluxe": "Kamar Deluxe",
+        "family": "Suite Keluarga",
+        "presidential": "Suite Presidensial"
+    },
+    "checkIn": "Tanggal Check-in",
+    "checkInPlaceholder": "Pilih tanggal",
+    "checkOut": "Tanggal Check-out",
+    "checkOutPlaceholder": "Pilih tanggal",
+    "submit": "Cek Ketersediaan & Pesan",
+    "submitting": "Memesan...",
+    "success": {
+        "title": "Reservasi Dikonfirmasi!",
+        "message": "Pemesanan Anda telah berhasil diproses. ID pemesanan Anda adalah"
+    },
+    "error": {
+        "title": "Pemesanan Gagal",
+        "guestNameRequired": "Nama tamu wajib diisi.",
+        "checkInRequired": "Tanggal check-in wajib diisi.",
+        "checkOutRequired": "Tanggal check-out wajib diisi.",
+        "guestsRequired": "Jumlah tamu wajib diisi.",
+        "roomTypeRequired": "Tipe kamar wajib diisi.",
+        "invalidDateRange": "Tanggal check-out harus setelah tanggal check-in.",
+        "unexpected": "Terjadi kesalahan tak terduga. Silakan coba lagi nanti."
+    }
+  },
   "pricing": {
     "title": "Alat Harga Dinamis",
     "description": "Manfaatkan AI untuk menyarankan harga kamar yang optimal berdasarkan permintaan waktu nyata, musiman, dan tarif pesaing.",
