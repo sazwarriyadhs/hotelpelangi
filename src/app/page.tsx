@@ -11,11 +11,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
-import { BedDouble, Utensils, Waves } from 'lucide-react';
+import { Leaf, Dumbbell, Waves } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BookingForm } from '@/components/booking-form';
 import { RestaurantBookingForm } from '@/components/restaurant-booking-form';
+import { useTranslation } from '@/hooks/use-translation';
 
 
 const heroSlides = [
@@ -74,6 +75,7 @@ export default function LandingPage() {
     const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col min-h-dvh">
@@ -111,20 +113,19 @@ export default function LandingPage() {
             <div className="flex flex-col justify-center items-center text-center space-y-4">
               <div className="space-y-2">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
-                  Experience Unmatched Luxury at Serenity Hotel
+                  {t('landingPage.heroTitle')}
                 </h1>
                 <p className="max-w-[600px] text-gray-200 md:text-xl">
-                  Escape to a world of comfort and elegance. Our hotel offers
-                  world-class amenities and breathtaking views.
+                  {t('landingPage.heroSubtitle')}
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="#booking">
-                  <Button size="lg">Book Your Stay</Button>
+                  <Button size="lg">{t('landingPage.bookYourStay')}</Button>
                 </Link>
                 <Link href="#rooms">
                   <Button variant="secondary" size="lg">
-                    Explore Rooms
+                    {t('landingPage.exploreRooms')}
                   </Button>
                 </Link>
               </div>
@@ -149,14 +150,13 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">
-                  Key Features
+                  {t('landingPage.featuresTitle')}
                 </div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">
-                  Everything You Need for a Perfect Stay
+                  {t('landingPage.featuresSubtitle')}
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  From our elegant rooms to our fine dining, we provide an
-                  unforgettable experience.
+                  {t('landingPage.featuresDescription')}
                 </p>
               </div>
             </div>
@@ -167,34 +167,33 @@ export default function LandingPage() {
                 width={600}
                 height={400}
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-                data-ai-hint="hotel room interior"
+                data-ai-hint="resort spa interior"
               />
               <div className="grid gap-4">
                 <div className="flex items-start gap-4">
-                  <BedDouble className="mt-1 h-8 w-8 text-primary" />
+                  <Leaf className="mt-1 h-8 w-8 text-primary" />
                   <div>
-                    <h3 className="text-xl font-bold">Luxurious Rooms</h3>
+                    <h3 className="text-xl font-bold">{t('resortPage.spa.title')}</h3>
                     <p className="text-muted-foreground">
-                      Spacious and elegantly designed rooms with all modern
-                      comforts.
+                      {t('resortPage.spa.description')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Utensils className="mt-1 h-8 w-8 text-primary" />
+                  <Dumbbell className="mt-1 h-8 w-8 text-primary" />
                   <div>
-                    <h3 className="text-xl font-bold">Gourmet Dining</h3>
+                    <h3 className="text-xl font-bold">{t('resortPage.gym.title')}</h3>
                     <p className="text-muted-foreground">
-                      Exquisite dishes prepared by our world-class chefs.
+                      {t('resortPage.gym.description')}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Waves className="mt-1 h-8 w-8 text-primary" />
                   <div>
-                    <h3 className="text-xl font-bold">Infinity Pool</h3>
+                    <h3 className="text-xl font-bold">{t('resortPage.pool.title')}</h3>
                     <p className="text-muted-foreground">
-                      Relax and unwind by our stunning infinity pool with a view.
+                      {t('resortPage.pool.description')}
                     </p>
                   </div>
                 </div>
@@ -207,11 +206,10 @@ export default function LandingPage() {
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold font-headline tracking-tighter md:text-4xl/tight">
-                Our Accommodations
+                {t('landingPage.accommodationsTitle')}
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Choose from a variety of rooms and suites, each designed for
-                your comfort.
+                {t('landingPage.accommodationsSubtitle')}
               </p>
             </div>
             <div className="grid w-full grid-cols-1 gap-6 pt-8 md:grid-cols-2 lg:grid-cols-3">
@@ -219,57 +217,57 @@ export default function LandingPage() {
                 <CardHeader>
                   <Image
                     src="https://placehold.co/600x400.png"
-                    alt="Deluxe Room"
+                    alt={t('landingPage.deluxeRoomTitle')}
                     width={600}
                     height={400}
                     className="aspect-video rounded-t-lg object-cover"
                     data-ai-hint="deluxe hotel room"
                   />
-                  <CardTitle className="pt-4 font-headline">Deluxe Room</CardTitle>
+                  <CardTitle className="pt-4 font-headline">{t('landingPage.deluxeRoomTitle')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground">
-                    Perfect for couples or solo travelers, offering comfort and style.
+                    {t('landingPage.deluxeRoomDescription')}
                   </p>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full">{t('landingPage.viewDetails')}</Button>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <Image
                     src="https://placehold.co/600x400.png"
-                    alt="Family Suite"
+                    alt={t('landingPage.familySuiteTitle')}
                     width={600}
                     height={400}
                     className="aspect-video rounded-t-lg object-cover"
                     data-ai-hint="hotel family suite"
                   />
-                  <CardTitle className="pt-4 font-headline">Family Suite</CardTitle>
+                  <CardTitle className="pt-4 font-headline">{t('landingPage.familySuiteTitle')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground">
-                    Spacious suites with multiple beds, ideal for families.
+                    {t('landingPage.familySuiteDescription')}
                   </p>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full">{t('landingPage.viewDetails')}</Button>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <Image
                     src="https://placehold.co/600x400.png"
-                    alt="Presidential Suite"
+                    alt={t('landingPage.presidentialSuiteTitle')}
                     width={600}
                     height={400}
                     className="aspect-video rounded-t-lg object-cover"
                     data-ai-hint="presidential suite hotel"
                   />
-                  <CardTitle className="pt-4 font-headline">Presidential Suite</CardTitle>
+                  <CardTitle className="pt-4 font-headline">{t('landingPage.presidentialSuiteTitle')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground">
-                    The ultimate in luxury, with unparalleled views and amenities.
+                    {t('landingPage.presidentialSuiteDescription')}
                   </p>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full">{t('landingPage.viewDetails')}</Button>
                 </CardContent>
               </Card>
             </div>
@@ -281,13 +279,13 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm">
-                  Galeri
+                  {t('landingPage.galleryTitle')}
                 </div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">
-                  Jelajahi Galeri Kami
+                  {t('landingPage.gallerySubtitle')}
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Lihatlah lebih dekat keindahan dan kemewahan yang menanti Anda di Serenity Hotel.
+                  {t('landingPage.galleryDescription')}
                 </p>
               </div>
             </div>

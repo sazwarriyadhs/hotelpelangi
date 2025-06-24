@@ -17,7 +17,12 @@
     "profile": "Profil",
     "billing": "Tagihan",
     "settings": "Pengaturan",
-    "logout": "Keluar"
+    "logout": "Keluar",
+    "features": "Fasilitas",
+    "rooms": "Kamar",
+    "restaurant": "Restoran",
+    "gallery": "Galeri",
+    "bookNow": "Pesan Sekarang"
   },
   "dashboard": {
     "title": "Selamat Datang Kembali, Admin",
@@ -175,5 +180,27 @@
         }
       }
     }
+  },
+  "landingPage": {
+    "heroTitle": "Rasakan Kemewahan Tak Tertandingi di Serenity Hotel",
+    "heroSubtitle": "Melarikan diri ke dunia kenyamanan dan keanggunan. Hotel kami menawarkan fasilitas kelas dunia dan pemandangan yang menakjubkan.",
+    "bookYourStay": "Pesan Penginapan Anda",
+    "exploreRooms": "Jelajahi Kamar",
+    "featuresTitle": "Fasilitas Kami",
+    "featuresSubtitle": "Semua yang Anda Butuhkan untuk Penginapan Sempurna",
+    "featuresDescription": "Dari layanan resor eksklusif hingga kamar kami yang elegan, kami memberikan pengalaman yang tak terlupakan.",
+    "accommodationsTitle": "Akomodasi Kami",
+    "accommodationsSubtitle": "Pilih dari berbagai kamar dan suite, masing-masing dirancang untuk kenyamanan Anda.",
+    "deluxeRoomTitle": "Kamar Deluxe",
+    "deluxeRoomDescription": "Sempurna untuk pasangan atau pelancong tunggal, menawarkan kenyamanan dan gaya.",
+    "familySuiteTitle": "Suite Keluarga",
+    "familySuiteDescription": "Suite luas dengan beberapa tempat tidur, ideal untuk keluarga.",
+    "presidentialSuiteTitle": "Suite Presidensial",
+    "presidentialSuiteDescription": "Kemewahan tertinggi, dengan pemandangan dan fasilitas yang tak tertandingi.",
+    "viewDetails": "Lihat Detail",
+    "galleryTitle": "Galeri",
+    "gallerySubtitle": "Jelajahi Galeri Kami",
+    "galleryDescription": "Lihatlah lebih dekat keindahan dan kemewahan yang menanti Anda di Serenity Hotel.",
+    "footer": "&copy; 2024 Serenity Hotel. Hak cipta dilindungi undang-undang."
   }
 }

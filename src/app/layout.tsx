@@ -11,7 +11,8 @@ import { SettingsProvider } from '@/contexts/settings-context';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Hotel, Mountain } from 'lucide-react';
+import { Hotel } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
 const metadata: Metadata = {
   title: 'Serenity Hotel Management',
@@ -37,6 +38,7 @@ function AdminLayout({ children }: { children: React.ReactNode }) {
 }
 
 function ClientLayout({ children }: { children: React.ReactNode }) {
+  const { t } = useTranslation();
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/80 px-4 backdrop-blur-sm lg:px-6 h-16 flex items-center">
@@ -49,36 +51,34 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
             href="/#features"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
-            Features
+            {t('header.features')}
           </Link>
           <Link
             href="/#rooms"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
-            Rooms
+            {t('header.rooms')}
           </Link>
           <Link
             href="/#restaurant-booking"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
-            Restaurant
+            {t('header.restaurant')}
           </Link>
            <Link
             href="/#gallery"
             className="text-sm font-medium hover:underline underline-offset-4"
           >
-            Galeri
+            {t('header.gallery')}
           </Link>
           <Button asChild>
-            <Link href="/#booking">Book Now</Link>
+            <Link href="/#booking">{t('header.bookNow')}</Link>
           </Button>
         </nav>
       </header>
       <main className="flex-1">{children}</main>
       <footer className="flex w-full shrink-0 flex-col items-center justify-center gap-2 border-t px-4 py-6 sm:flex-row md:px-6">
-        <p className="text-xs text-muted-foreground">
-          &copy; 2024 Serenity Hotel. All rights reserved.
-        </p>
+        <p className="text-xs text-muted-foreground" dangerouslySetInnerHTML={{ __html: t('landingPage.footer') }} />
       </footer>
     </div>
   );

@@ -17,7 +17,12 @@
     "profile": "Profile",
     "billing": "Billing",
     "settings": "Settings",
-    "logout": "Log out"
+    "logout": "Log out",
+    "features": "Facilities",
+    "rooms": "Rooms",
+    "restaurant": "Restaurant",
+    "gallery": "Gallery",
+    "bookNow": "Book Now"
   },
   "dashboard": {
     "title": "Welcome Back, Admin",
@@ -175,5 +180,27 @@
         }
       }
     }
+  },
+  "landingPage": {
+    "heroTitle": "Experience Unmatched Luxury at Serenity Hotel",
+    "heroSubtitle": "Escape to a world of comfort and elegance. Our hotel offers world-class amenities and breathtaking views.",
+    "bookYourStay": "Book Your Stay",
+    "exploreRooms": "Explore Rooms",
+    "featuresTitle": "Our Facilities",
+    "featuresSubtitle": "Everything You Need for a Perfect Stay",
+    "featuresDescription": "From our exclusive resort services to our elegant rooms, we provide an unforgettable experience.",
+    "accommodationsTitle": "Our Accommodations",
+    "accommodationsSubtitle": "Choose from a variety of rooms and suites, each designed for your comfort.",
+    "deluxeRoomTitle": "Deluxe Room",
+    "deluxeRoomDescription": "Perfect for couples or solo travelers, offering comfort and style.",
+    "familySuiteTitle": "Family Suite",
+    "familySuiteDescription": "Spacious suites with multiple beds, ideal for families.",
+    "presidentialSuiteTitle": "Presidential Suite",
+    "presidentialSuiteDescription": "The ultimate in luxury, with unparalleled views and amenities.",
+    "viewDetails": "View Details",
+    "galleryTitle": "Gallery",
+    "gallerySubtitle": "Explore Our Gallery",
+    "galleryDescription": "Take a closer look at the beauty and luxury that awaits you at Serenity Hotel.",
+    "footer": "&copy; 2024 Serenity Hotel. All rights reserved."
   }
 }
