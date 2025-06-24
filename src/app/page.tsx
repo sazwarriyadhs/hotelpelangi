@@ -1,47 +1,95 @@
 'use client';
 
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BedDouble, Wifi, Utensils, Waves } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay"
+import { BedDouble, Utensils, Waves } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+const heroSlides = [
+  {
+    src: "https://placehold.co/1920x1080.png",
+    alt: "Luxurious hotel exterior",
+    hint: "luxury hotel exterior",
+  },
+  {
+    src: "https://placehold.co/1920x1080.png",
+    alt: "Elegant hotel lobby",
+    hint: "hotel lobby elegant",
+  },
+  {
+    src: "https://placehold.co/1920x1080.png",
+    alt: "Stunning resort pool view",
+    hint: "resort swimming pool",
+  },
+];
+
+
 export default function LandingPage() {
+    const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
+
   return (
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
-        <section className="relative w-full pt-12 md:pt-24 lg:pt-32">
-           <div className="absolute inset-0 bg-black/60 z-10"/>
-          <Image
-            src="https://placehold.co/1920x1080.png"
-            alt="Hero"
-            layout="fill"
-            objectFit="cover"
-            className="aspect-[3/1] object-cover"
-            data-ai-hint="luxury hotel exterior"
-          />
-          <div className="container relative z-20 px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="font-headline text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
-                    Experience Unmatched Luxury at Serenity Hotel
-                  </h1>
-                  <p className="max-w-[600px] text-gray-200 md:text-xl">
-                    Escape to a world of comfort and elegance. Our hotel offers
-                    world-class amenities and breathtaking views.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link href="#">
-                    <Button size="lg">Book Your Stay</Button>
-                  </Link>
-                  <Link href="#">
-                    <Button variant="secondary" size="lg">
-                      Explore Rooms
-                    </Button>
-                  </Link>
-                </div>
+        <section className="relative w-full h-[90vh]">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full h-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              loop: true,
+            }}
+          >
+            <CarouselContent className="h-full">
+              {heroSlides.map((slide, index) => (
+                <CarouselItem key={index}>
+                  <div className="h-full w-full relative">
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      priority={index === 0}
+                      style={{ objectFit: 'cover' }}
+                      className="object-cover"
+                      data-ai-hint={slide.hint}
+                    />
+                    <div className="absolute inset-0 bg-black/60 z-10" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+           <div className="container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 px-4 md:px-6">
+            <div className="flex flex-col justify-center items-center text-center space-y-4">
+              <div className="space-y-2">
+                <h1 className="font-headline text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
+                  Experience Unmatched Luxury at Serenity Hotel
+                </h1>
+                <p className="max-w-[600px] text-gray-200 md:text-xl">
+                  Escape to a world of comfort and elegance. Our hotel offers
+                  world-class amenities and breathtaking views.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Link href="#">
+                  <Button size="lg">Book Your Stay</Button>
+                </Link>
+                <Link href="#">
+                  <Button variant="secondary" size="lg">
+                    Explore Rooms
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
