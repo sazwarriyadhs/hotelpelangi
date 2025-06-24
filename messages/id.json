@@ -140,10 +140,22 @@
   "resortPage": {
     "title": "Layanan Resor",
     "description": "Temukan dan kelola layanan eksklusif yang tersedia di resor kami.",
+    "viewMenu": "Lihat Menu Layanan",
     "spa": {
       "title": "Serenity Spa",
       "description": "Manjakan diri dengan perawatan dan terapi yang meremajakan.",
-      "action": "Lihat Perawatan"
+      "action": "Lihat Perawatan",
+      "menu": {
+        "balinese-massage": {
+          "name": "Pijat Bali"
+        },
+        "hot-stone": {
+          "name": "Terapi Batu Panas"
+        },
+        "facial": {
+          "name": "Perawatan Wajah Revitalisasi"
+        }
+      }
     },
     "gym": {
       "title": "Pusat Kebugaran",
@@ -153,7 +165,15 @@
     "pool": {
       "title": "Cabana Tepi Kolam",
       "description": "Bersantai dalam kemewahan dengan cabana pribadi di tepi kolam.",
-      "action": "Pesan Cabana"
+      "action": "Pesan Cabana",
+      "menu": {
+        "full-day": {
+          "name": "Sewa Sehari Penuh"
+        },
+        "half-day": {
+          "name": "Sewa Setengah Hari (4 jam)"
+        }
+      }
     }
   }
 }

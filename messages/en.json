@@ -140,10 +140,22 @@
   "resortPage": {
     "title": "Resort Services",
     "description": "Discover and manage the exclusive services available at our resort.",
+    "viewMenu": "View Service Menu",
     "spa": {
       "title": "Serenity Spa",
       "description": "Indulge in rejuvenating treatments and therapies.",
-      "action": "View Treatments"
+      "action": "View Treatments",
+      "menu": {
+        "balinese-massage": {
+          "name": "Balinese Massage"
+        },
+        "hot-stone": {
+          "name": "Hot Stone Therapy"
+        },
+        "facial": {
+          "name": "Revitalizing Facial"
+        }
+      }
     },
     "gym": {
       "title": "Fitness Center",
@@ -153,7 +165,15 @@
     "pool": {
       "title": "Poolside Cabanas",
       "description": "Relax in luxury with private poolside cabanas.",
-      "action": "Reserve Cabana"
+      "action": "Reserve Cabana",
+      "menu": {
+        "full-day": {
+          "name": "Full Day Rental"
+        },
+        "half-day": {
+          "name": "Half Day Rental (4 hours)"
+        }
+      }
     }
   }
 }
