@@ -145,7 +145,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -169,32 +169,47 @@ export default function LandingPage() {
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 data-ai-hint="resort spa interior"
               />
-              <div className="grid gap-4">
+              <div className="grid gap-6">
                 <div className="flex items-start gap-4">
-                  <Leaf className="mt-1 h-8 w-8 text-primary" />
-                  <div>
+                  <Leaf className="mt-1 h-8 w-8 flex-shrink-0 text-primary" />
+                  <div className="flex flex-col gap-2">
                     <h3 className="text-xl font-bold">{t('resortPage.spa.title')}</h3>
                     <p className="text-muted-foreground">
                       {t('resortPage.spa.description')}
                     </p>
+                     <div className="pt-2">
+                        <Button asChild variant="secondary">
+                           <Link href="/resort">{t('resortPage.spa.action')}</Link>
+                        </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Dumbbell className="mt-1 h-8 w-8 text-primary" />
-                  <div>
+                  <Dumbbell className="mt-1 h-8 w-8 flex-shrink-0 text-primary" />
+                   <div className="flex flex-col gap-2">
                     <h3 className="text-xl font-bold">{t('resortPage.gym.title')}</h3>
                     <p className="text-muted-foreground">
                       {t('resortPage.gym.description')}
                     </p>
+                    <div className="pt-2">
+                        <Button asChild variant="secondary">
+                            <Link href="/resort">{t('resortPage.gym.action')}</Link>
+                        </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Waves className="mt-1 h-8 w-8 text-primary" />
-                  <div>
+                  <Waves className="mt-1 h-8 w-8 flex-shrink-0 text-primary" />
+                  <div className="flex flex-col gap-2">
                     <h3 className="text-xl font-bold">{t('resortPage.pool.title')}</h3>
                     <p className="text-muted-foreground">
                       {t('resortPage.pool.description')}
                     </p>
+                     <div className="pt-2">
+                        <Button asChild variant="secondary">
+                            <Link href="/resort">{t('resortPage.pool.action')}</Link>
+                        </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,7 +217,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="rooms" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="rooms" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold font-headline tracking-tighter md:text-4xl/tight">
@@ -274,7 +289,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
