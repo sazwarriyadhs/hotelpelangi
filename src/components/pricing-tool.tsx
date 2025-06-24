@@ -11,6 +11,9 @@ import { Wand2, Loader2, Info } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "@/hooks/use-translation";
+import { useSettings } from "@/hooks/use-settings";
+import { formatCurrency } from "@/lib/utils";
 
 const initialState = {
   data: null,
@@ -19,17 +22,18 @@ const initialState = {
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+  const { t } = useTranslation();
   return (
     <Button type="submit" disabled={pending} className="w-full">
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Analyzing...
+          {t('pricing.analyzing')}
         </>
       ) : (
         <>
           <Wand2 className="mr-2 h-4 w-4" />
-          Suggest Price
+          {t('pricing.suggestPrice')}
         </>
       )}
     </Button>
@@ -39,16 +43,18 @@ function SubmitButton() {
 export function PricingTool() {
   const [state, formAction] = useFormState(getPricingSuggestion, initialState);
   const { toast } = useToast();
+  const { t } = useTranslation();
+  const { currency } = useSettings();
 
   useEffect(() => {
     if (state.error) {
       toast({
         variant: "destructive",
-        title: "An error occurred",
-        description: state.error,
+        title: t('pricing.error.title'),
+        description: t(state.error),
       });
     }
-  }, [state.error, toast]);
+  }, [state.error, toast, t]);
 
 
   return (
@@ -56,43 +62,43 @@ export function PricingTool() {
       <Card className="lg:col-span-1">
         <form action={formAction}>
           <CardHeader>
-            <CardTitle className="font-headline">Market Factors</CardTitle>
-            <CardDescription>Provide current market conditions.</CardDescription>
+            <CardTitle className="font-headline">{t('pricing.marketFactors')}</CardTitle>
+            <CardDescription>{t('pricing.marketFactorsDesc')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="demand">Demand Level</Label>
+              <Label htmlFor="demand">{t('pricing.demandLevel')}</Label>
               <Select name="demand" required>
                 <SelectTrigger id="demand">
-                  <SelectValue placeholder="Select demand level" />
+                  <SelectValue placeholder={t('pricing.selectDemand')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="low">Low</SelectItem>
-                  <SelectItem value="medium">Medium</SelectItem>
-                  <SelectItem value="high">High</SelectItem>
+                  <SelectItem value="low">{t('pricing.demand.low')}</SelectItem>
+                  <SelectItem value="medium">{t('pricing.demand.medium')}</SelectItem>
+                  <SelectItem value="high">{t('pricing.demand.high')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="seasonality">Seasonality</Label>
+              <Label htmlFor="seasonality">{t('pricing.seasonality')}</Label>
                <Select name="seasonality" required>
                 <SelectTrigger id="seasonality">
-                  <SelectValue placeholder="Select seasonality" />
+                  <SelectValue placeholder={t('pricing.selectSeasonality')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="off-peak">Off-Peak</SelectItem>
-                  <SelectItem value="shoulder-season">Shoulder Season</SelectItem>
-                  <SelectItem value="peak-season">Peak Season</SelectItem>
-                   <SelectItem value="holiday">Holiday</SelectItem>
+                  <SelectItem value="off-peak">{t('pricing.seasonality.offPeak')}</SelectItem>
+                  <SelectItem value="shoulder-season">{t('pricing.seasonality.shoulder')}</SelectItem>
+                  <SelectItem value="peak-season">{t('pricing.seasonality.peak')}</SelectItem>
+                   <SelectItem value="holiday">{t('pricing.seasonality.holiday')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="competitorRates">Competitor Rates</Label>
+              <Label htmlFor="competitorRates">{t('pricing.competitorRates')}</Label>
               <Textarea
                 id="competitorRates"
                 name="competitorRates"
-                placeholder="e.g., Hotel Rival: $150, Guesthouse Nearby: $95"
+                placeholder={t('pricing.competitorRatesPlaceholder')}
                 required
                 className="min-h-24"
               />
@@ -107,19 +113,24 @@ export function PricingTool() {
       <div className="lg:col-span-2">
         <Card className="min-h-full">
            <CardHeader>
-            <CardTitle className="font-headline">AI-Powered Suggestion</CardTitle>
-            <CardDescription>Our AI will analyze the data and provide a pricing recommendation.</CardDescription>
+            <CardTitle className="font-headline">{t('pricing.aiSuggestion')}</CardTitle>
+            <CardDescription>{t('pricing.aiSuggestionDesc')}</CardDescription>
           </CardHeader>
           <CardContent>
             {state.data ? (
               <div className="space-y-6">
                 <div className="text-center">
-                    <p className="text-muted-foreground">Suggested Optimal Price</p>
-                    <p className="text-6xl font-bold text-primary">${state.data.suggestedPrice.toFixed(2)}</p>
+                    <p className="text-muted-foreground">{t('pricing.suggestedPrice')}</p>
+                    <p className="text-6xl font-bold text-primary">
+                        {formatCurrency(
+                            currency === 'IDR' ? state.data.suggestedPrice * 15000 : state.data.suggestedPrice,
+                            currency
+                        )}
+                    </p>
                 </div>
                 <Alert>
                     <Info className="h-4 w-4" />
-                    <AlertTitle className="font-headline">Reasoning</AlertTitle>
+                    <AlertTitle className="font-headline">{t('pricing.reasoning')}</AlertTitle>
                     <AlertDescription>
                         {state.data.reasoning}
                     </AlertDescription>
@@ -128,7 +139,7 @@ export function PricingTool() {
             ) : (
                  <div className="flex h-64 items-center justify-center rounded-lg border-2 border-dashed">
                     <div className="text-center">
-                        <p className="text-muted-foreground">Your pricing suggestion will appear here.</p>
+                        <p className="text-muted-foreground">{t('pricing.suggestionPlaceholder')}</p>
                     </div>
                 </div>
             )}

@@ -1,14 +1,18 @@
+'use client';
+
 import { PricingTool } from '@/components/pricing-tool';
+import { useTranslation } from '@/hooks/use-translation';
 import { Wand2 } from 'lucide-react';
 
 export default function PricingPage() {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-8">
       <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-bold font-headline md:text-4xl">Dynamic Pricing Tool</h1>
+            <h1 className="text-3xl font-bold font-headline md:text-4xl">{t('pricing.title')}</h1>
             <p className="text-muted-foreground max-w-2xl">
-              Leverage AI to suggest optimal room pricing based on real-time demand, seasonality, and competitor rates.
+              {t('pricing.description')}
             </p>
         </div>
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">

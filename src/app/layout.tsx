@@ -5,6 +5,7 @@ import { SidebarProvider, Sidebar } from '@/components/ui/sidebar';
 import { Toaster } from '@/components/ui/toaster';
 import { AppHeader } from '@/components/app-header';
 import { AppSidebar } from '@/components/app-sidebar';
+import { SettingsProvider } from '@/contexts/settings-context';
 
 export const metadata: Metadata = {
   title: 'Serenity Hotel Management',
@@ -27,19 +28,21 @@ export default function RootLayout({
         />
       </head>
       <body className={cn('font-body antialiased')}>
-        <SidebarProvider>
-          <div className="flex min-h-screen w-full">
-            <Sidebar collapsible="icon" className="border-r">
-              <AppSidebar />
-            </Sidebar>
-            <div className="flex flex-1 flex-col">
-              <AppHeader />
-              <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
-                {children}
-              </main>
+        <SettingsProvider>
+          <SidebarProvider>
+            <div className="flex min-h-screen w-full">
+              <Sidebar collapsible="icon" className="border-r">
+                <AppSidebar />
+              </Sidebar>
+              <div className="flex flex-1 flex-col">
+                <AppHeader />
+                <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
+                  {children}
+                </main>
+              </div>
             </div>
-          </div>
-        </SidebarProvider>
+          </SidebarProvider>
+        </SettingsProvider>
         <Toaster />
       </body>
     </html>

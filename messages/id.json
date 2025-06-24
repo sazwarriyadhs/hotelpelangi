@@ -1,0 +1,79 @@
+
+{
+  "sidebar": {
+    "dashboard": "Dasbor",
+    "availability": "Ketersediaan",
+    "reservations": "Reservasi",
+    "menu": "Menu",
+    "resort": "Layanan Resor",
+    "pricing": "Harga Dinamis",
+    "settings": "Pengaturan",
+    "soon": "Segera"
+  },
+  "header": {
+    "notifications": "Alihkan notifikasi",
+    "userMenu": "Alihkan menu pengguna",
+    "adminAccount": "Akun Admin",
+    "profile": "Profil",
+    "billing": "Tagihan",
+    "settings": "Pengaturan",
+    "logout": "Keluar"
+  },
+  "dashboard": {
+    "title": "Selamat Datang Kembali, Admin",
+    "description": "Berikut adalah ringkasan kinerja properti Anda hari ini.",
+    "totalRevenue": "Total Pendapatan",
+    "totalRevenueDesc": "+20.1% dari bulan lalu",
+    "bookings": "Pemesanan",
+    "bookingsDesc": "+180.1% dari bulan lalu",
+    "occupancyRate": "Tingkat Hunian",
+    "occupancyRateDesc": "+19% dari bulan lalu",
+    "restaurantCovers": "Tamu Restoran",
+    "restaurantCoversDesc": "+21 dari bulan lalu",
+    "weeklyRevenue": "Pendapatan Mingguan",
+    "weeklyRevenueDesc": "Ringkasan pendapatan minggu ini.",
+    "recentActivity": "Aktivitas Terkini",
+    "recentActivities": {
+      "olivia": "check-in ke Kamar 204.",
+      "jackson": "memesan meja untuk 4 orang.",
+      "isabella": "meminta check-out terlambat dari Suite 3.",
+      "william": "membayar tagihan restorannya.",
+      "sofia": "check-out dari Kamar 112."
+    }
+  },
+  "pricing": {
+    "title": "Alat Harga Dinamis",
+    "description": "Manfaatkan AI untuk menyarankan harga kamar yang optimal berdasarkan permintaan waktu nyata, musiman, dan tarif pesaing.",
+    "marketFactors": "Faktor Pasar",
+    "marketFactorsDesc": "Sediakan kondisi pasar saat ini.",
+    "demandLevel": "Tingkat Permintaan",
+    "selectDemand": "Pilih tingkat permintaan",
+    "demand": {
+      "low": "Rendah",
+      "medium": "Sedang",
+      "high": "Tinggi"
+    },
+    "seasonality": "Musiman",
+    "selectSeasonality": "Pilih musiman",
+    "seasonality": {
+      "offPeak": "Musim Sepi",
+      "shoulder": "Musim Peralihan",
+      "peak": "Musim Ramai",
+      "holiday": "Hari Libur"
+    },
+    "competitorRates": "Tarif Pesaing",
+    "competitorRatesPlaceholder": "cth., Hotel Rival: $150, Wisma Terdekat: $95",
+    "suggestPrice": "Sarankan Harga",
+    "analyzing": "Menganalisis...",
+    "aiSuggestion": "Saran Berbasis AI",
+    "aiSuggestionDesc": "AI kami akan menganalisis data dan memberikan rekomendasi harga.",
+    "suggestedPrice": "Harga Optimal yang Disarankan",
+    "reasoning": "Alasan",
+    "suggestionPlaceholder": "Saran harga Anda akan muncul di sini.",
+    "error": {
+        "title": "Terjadi kesalahan",
+        "invalidForm": "Data formulir tidak valid. Harap pastikan semua bidang diisi.",
+        "unexpected": "Terjadi kesalahan tak terduga saat mengambil saran harga. Silakan coba lagi nanti."
+    }
+  }
+}

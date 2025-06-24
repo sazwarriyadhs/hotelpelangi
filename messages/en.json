@@ -1,0 +1,79 @@
+
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "availability": "Availability",
+    "reservations": "Reservations",
+    "menu": "Menu",
+    "resort": "Resort Services",
+    "pricing": "Dynamic Pricing",
+    "settings": "Settings",
+    "soon": "Soon"
+  },
+  "header": {
+    "notifications": "Toggle notifications",
+    "userMenu": "Toggle user menu",
+    "adminAccount": "Admin Account",
+    "profile": "Profile",
+    "billing": "Billing",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "dashboard": {
+    "title": "Welcome Back, Admin",
+    "description": "Here's a snapshot of your property's performance today.",
+    "totalRevenue": "Total Revenue",
+    "totalRevenueDesc": "+20.1% from last month",
+    "bookings": "Bookings",
+    "bookingsDesc": "+180.1% from last month",
+    "occupancyRate": "Occupancy Rate",
+    "occupancyRateDesc": "+19% from last month",
+    "restaurantCovers": "Restaurant Covers",
+    "restaurantCoversDesc": "+21 from last month",
+    "weeklyRevenue": "Weekly Revenue",
+    "weeklyRevenueDesc": "A summary of this week's income.",
+    "recentActivity": "Recent Activity",
+    "recentActivities": {
+      "olivia": "checked in to Room 204.",
+      "jackson": "booked a table for 4.",
+      "isabella": "requested late check-out from Suite 3.",
+      "william": "paid their restaurant bill.",
+      "sofia": "checked out from Room 112."
+    }
+  },
+  "pricing": {
+    "title": "Dynamic Pricing Tool",
+    "description": "Leverage AI to suggest optimal room pricing based on real-time demand, seasonality, and competitor rates.",
+    "marketFactors": "Market Factors",
+    "marketFactorsDesc": "Provide current market conditions.",
+    "demandLevel": "Demand Level",
+    "selectDemand": "Select demand level",
+    "demand": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "seasonality": "Seasonality",
+    "selectSeasonality": "Select seasonality",
+    "seasonality": {
+      "offPeak": "Off-Peak",
+      "shoulder": "Shoulder Season",
+      "peak": "Peak Season",
+      "holiday": "Holiday"
+    },
+    "competitorRates": "Competitor Rates",
+    "competitorRatesPlaceholder": "e.g., Hotel Rival: $150, Guesthouse Nearby: $95",
+    "suggestPrice": "Suggest Price",
+    "analyzing": "Analyzing...",
+    "aiSuggestion": "AI-Powered Suggestion",
+    "aiSuggestionDesc": "Our AI will analyze the data and provide a pricing recommendation.",
+    "suggestedPrice": "Suggested Optimal Price",
+    "reasoning": "Reasoning",
+    "suggestionPlaceholder": "Your pricing suggestion will appear here.",
+    "error": {
+        "title": "An error occurred",
+        "invalidForm": "Invalid form data. Please ensure all fields are filled out.",
+        "unexpected": "An unexpected error occurred while fetching the pricing suggestion. Please try again later."
+    }
+  }
+}
