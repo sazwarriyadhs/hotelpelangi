@@ -15,7 +15,7 @@ const menuItems = [
   { href: "/availability", labelKey: "sidebar.availability", icon: CalendarCheck },
   { href: "/reservations", labelKey: "sidebar.reservations", icon: BedDouble },
   { href: "/menu", labelKey: "sidebar.menu", icon: UtensilsCrossed },
-  { href: "/resort", labelKey: "sidebar.resort", icon: Sparkles, comingSoon: true },
+  { href: "/resort", labelKey: "sidebar.resort", icon: Sparkles },
   { href: "/pricing", labelKey: "sidebar.pricing", icon: DollarSign },
   { href: "/settings", labelKey: "sidebar.settings", icon: Cog },
 ];

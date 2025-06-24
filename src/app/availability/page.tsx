@@ -30,6 +30,16 @@ const tables = [
   { number: 8, capacity: 8, status: "Available" },
 ];
 
+const resortAssets = [
+  { name: "Spa Treatment Room 1", service: "Spa", status: "Available" },
+  { name: "Spa Treatment Room 2", service: "Spa", status: "Occupied" },
+  { name: "Yoga Mat 1", service: "Fitness", status: "Available" },
+  { name: "Yoga Mat 2", service: "Fitness", status: "Available" },
+  { name: "Poolside Cabana A", service: "Pool", status: "Reserved" },
+  { name: "Poolside Cabana B", service: "Pool", status: "Available" },
+  { name: "Poolside Cabana C", service: "Pool", status: "Cleaning" },
+];
+
 const statusStyles = {
   Available: "bg-green-100 border-green-300 text-green-800 dark:bg-green-900/50 dark:border-green-800 dark:text-green-300",
   Occupied: "bg-red-100 border-red-300 text-red-800 dark:bg-red-900/50 dark:border-red-800 dark:text-red-300",
@@ -94,14 +104,21 @@ export default function AvailabilityPage() {
           </div>
         </TabsContent>
         <TabsContent value="resort" className="mt-6">
-            <Card className="flex flex-col items-center justify-center h-96 border-dashed">
-                <CardHeader>
-                    <CardTitle className="font-headline text-2xl">Coming Soon</CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                    <p className="text-muted-foreground">Management for resort services and amenities will be available here.</p>
-                </CardContent>
-            </Card>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {resortAssets.map((asset, index) => (
+                <Card key={index} className={cn("transition-all hover:shadow-lg", statusStyles[asset.status as keyof typeof statusStyles])}>
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between">
+                      <span>{asset.name}</span>
+                      <Badge variant="outline" className="border-current">{asset.status}</Badge>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm font-medium">{asset.service}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
         </TabsContent>
       </Tabs>
     </div>

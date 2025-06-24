@@ -136,5 +136,24 @@
         "guestsRequired": "Jumlah tamu wajib diisi.",
         "unexpected": "Terjadi kesalahan tak terduga. Silakan coba lagi nanti."
     }
+  },
+  "resortPage": {
+    "title": "Layanan Resor",
+    "description": "Temukan dan kelola layanan eksklusif yang tersedia di resor kami.",
+    "spa": {
+      "title": "Serenity Spa",
+      "description": "Manjakan diri dengan perawatan dan terapi yang meremajakan.",
+      "action": "Lihat Perawatan"
+    },
+    "gym": {
+      "title": "Pusat Kebugaran",
+      "description": "Peralatan canggih untuk kebutuhan latihan Anda.",
+      "action": "Cek Jadwal"
+    },
+    "pool": {
+      "title": "Cabana Tepi Kolam",
+      "description": "Bersantai dalam kemewahan dengan cabana pribadi di tepi kolam.",
+      "action": "Pesan Cabana"
+    }
   }
 }

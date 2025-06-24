@@ -136,5 +136,24 @@
         "guestsRequired": "Number of guests is required.",
         "unexpected": "An unexpected error occurred. Please try again later."
     }
+  },
+  "resortPage": {
+    "title": "Resort Services",
+    "description": "Discover and manage the exclusive services available at our resort.",
+    "spa": {
+      "title": "Serenity Spa",
+      "description": "Indulge in rejuvenating treatments and therapies.",
+      "action": "View Treatments"
+    },
+    "gym": {
+      "title": "Fitness Center",
+      "description": "State-of-the-art equipment for your workout needs.",
+      "action": "Check Schedule"
+    },
+    "pool": {
+      "title": "Poolside Cabanas",
+      "description": "Relax in luxury with private poolside cabanas.",
+      "action": "Reserve Cabana"
+    }
   }
 }
