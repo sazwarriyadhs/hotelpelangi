@@ -26,22 +26,20 @@ export function MainNav() {
     <SidebarMenu>
       {menuItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
-            <SidebarMenuButton
-              asChild
-              isActive={pathname === item.href}
-              tooltip={{ children: item.label, side: "right", align: "center" }}
-              className="justify-start"
-            >
-              <a>
-                <item.icon className="h-5 w-5" />
-                <span className="min-w-0">{item.label}</span>
-                {item.comingSoon && state === "expanded" && (
-                    <Badge variant="secondary" className="ml-auto">Soon</Badge>
-                )}
-              </a>
-            </SidebarMenuButton>
-          </Link>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === item.href}
+            tooltip={{ children: item.label, side: "right", align: "center" }}
+            className="justify-start"
+          >
+            <Link href={item.href}>
+              <item.icon className="h-5 w-5" />
+              <span className="min-w-0">{item.label}</span>
+              {item.comingSoon && state === "expanded" && (
+                  <Badge variant="secondary" className="ml-auto">Soon</Badge>
+              )}
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
