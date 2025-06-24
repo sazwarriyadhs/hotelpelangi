@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -10,7 +11,7 @@ import { useSidebar } from "@/components/ui/sidebar";
 import { Badge } from "@/components/ui/badge";
 
 const menuItems = [
-  { href: "/", labelKey: "sidebar.dashboard", icon: LayoutDashboard },
+  { href: "/dashboard", labelKey: "sidebar.dashboard", icon: LayoutDashboard },
   { href: "/availability", labelKey: "sidebar.availability", icon: CalendarCheck },
   { href: "/reservations", labelKey: "sidebar.reservations", icon: BedDouble },
   { href: "/menu", labelKey: "sidebar.menu", icon: UtensilsCrossed },
