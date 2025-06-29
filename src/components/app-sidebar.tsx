@@ -5,25 +5,14 @@ import { MainNav } from '@/components/main-nav';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useSidebar } from './ui/sidebar';
+import { Hotel } from 'lucide-react';
 
 function SerenityLogo() {
   const { state } = useSidebar();
   return (
     <Link href="/" className="flex items-center gap-3">
       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-6 w-6 text-primary-foreground"
-        >
-          <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-          <path d="M22 12A10 10 0 0 0 12 2v10z" />
-        </svg>
+        <Hotel className="h-6 w-6 text-primary-foreground" />
       </div>
       <span
         className={cn(
