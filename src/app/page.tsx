@@ -39,12 +39,12 @@ const heroSlides = [
 
 const gallerySlides = [
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/restaurant.jpg",
     alt: "Restaurant dining area",
     hint: "fine dining restaurant",
   },
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/spa.jpg",
     alt: "Spa treatment room",
     hint: "spa therapy room",
   },
@@ -162,7 +162,7 @@ export default function LandingPage() {
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/hotespa.jpg"
                 alt="Feature"
                 width={600}
                 height={400}
@@ -231,7 +231,7 @@ export default function LandingPage() {
               <Card>
                 <CardHeader>
                   <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/deluxe.jpg"
                     alt={t('landingPage.deluxeRoomTitle')}
                     width={600}
                     height={400}
@@ -250,7 +250,7 @@ export default function LandingPage() {
               <Card>
                 <CardHeader>
                   <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/famil.jpg"
                     alt={t('landingPage.familySuiteTitle')}
                     width={600}
                     height={400}
@@ -269,7 +269,7 @@ export default function LandingPage() {
               <Card>
                 <CardHeader>
                   <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/images/Presidensial.jpg"
                     alt={t('landingPage.presidentialSuiteTitle')}
                     width={600}
                     height={400}
