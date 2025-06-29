@@ -95,7 +95,7 @@
     },
     "seasonality": "Seasonality",
     "selectSeasonality": "Select seasonality",
-    "seasonality": {
+    "seasons": {
       "offPeak": "Off-Peak",
       "shoulder": "Shoulder Season",
       "peak": "Peak Season",

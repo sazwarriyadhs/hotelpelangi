@@ -86,10 +86,10 @@ export function PricingTool() {
                   <SelectValue placeholder={t('pricing.selectSeasonality')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="off-peak">{t('pricing.seasonality.offPeak')}</SelectItem>
-                  <SelectItem value="shoulder-season">{t('pricing.seasonality.shoulder')}</SelectItem>
-                  <SelectItem value="peak-season">{t('pricing.seasonality.peak')}</SelectItem>
-                   <SelectItem value="holiday">{t('pricing.seasonality.holiday')}</SelectItem>
+                  <SelectItem value="off-peak">{t('pricing.seasons.offPeak')}</SelectItem>
+                  <SelectItem value="shoulder-season">{t('pricing.seasons.shoulder')}</SelectItem>
+                  <SelectItem value="peak-season">{t('pricing.seasons.peak')}</SelectItem>
+                   <SelectItem value="holiday">{t('pricing.seasons.holiday')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>

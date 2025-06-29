@@ -95,7 +95,7 @@
     },
     "seasonality": "Musiman",
     "selectSeasonality": "Pilih musiman",
-    "seasonality": {
+    "seasons": {
       "offPeak": "Musim Sepi",
       "shoulder": "Musim Peralihan",
       "peak": "Musim Ramai",
