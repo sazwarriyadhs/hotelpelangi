@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { getPricingSuggestion } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Wand2, Loader2, Info } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
-import { useEffect } from "react";
+import { useActionState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "@/hooks/use-translation";
 import { useSettings } from "@/hooks/use-settings";
@@ -41,7 +41,7 @@ function SubmitButton() {
 }
 
 export function PricingTool() {
-  const [state, formAction] = useFormState(getPricingSuggestion, initialState);
+  const [state, formAction] = useActionState(getPricingSuggestion, initialState);
   const { toast } = useToast();
   const { t } = useTranslation();
   const { currency } = useSettings();
