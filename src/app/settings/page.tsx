@@ -1,10 +1,17 @@
+
+'use client';
+
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Globe, CreditCard } from 'lucide-react';
 
-const travelPortals = [
+type IntegrationId = 'booking-com' | 'expedia' | 'agoda' | 'airbnb' | 'trip-com' | 'traveloka';
+type PaymentMethodId = 'credit-card' | 'midtrans' | 'xendit' | 'paypal' | 'stripe' | 'pay-at-hotel';
+
+const travelPortals: { id: IntegrationId; name: string; description: string }[] = [
     { id: 'booking-com', name: 'Booking.com', description: 'Global travel fare aggregator.' },
     { id: 'expedia', name: 'Expedia Group', description: 'Online travel shopping company.' },
     { id: 'agoda', name: 'Agoda', description: 'Online travel agency for hotels.' },
@@ -13,7 +20,7 @@ const travelPortals = [
     { id: 'traveloka', name: 'Traveloka', description: 'Southeast Asian travel company.' },
 ];
 
-const paymentMethods = [
+const paymentMethods: { id: PaymentMethodId; name: string; description: string }[] = [
     { id: 'credit-card', name: 'Credit/Debit Cards', description: 'Accept Visa, MasterCard, etc.' },
     { id: 'midtrans', name: 'Midtrans Gateway', description: 'Indonesian payment gateway.' },
     { id: 'xendit', name: 'Xendit Gateway', description: 'Indonesian payment gateway.' },
@@ -23,6 +30,32 @@ const paymentMethods = [
 ];
 
 export default function SettingsPage() {
+    const [integrationStatus, setIntegrationStatus] = useState<Record<IntegrationId, boolean>>({
+        'booking-com': true,
+        'expedia': false,
+        'agoda': false,
+        'airbnb': false,
+        'trip-com': false,
+        'traveloka': false,
+    });
+
+    const [paymentStatus, setPaymentStatus] = useState<Record<PaymentMethodId, boolean>>({
+        'credit-card': true,
+        'midtrans': false,
+        'xendit': false,
+        'paypal': false,
+        'stripe': false,
+        'pay-at-hotel': true,
+    });
+
+    const handleIntegrationChange = (id: IntegrationId, checked: boolean) => {
+        setIntegrationStatus(prev => ({ ...prev, [id]: checked }));
+    };
+
+    const handlePaymentChange = (id: PaymentMethodId, checked: boolean) => {
+        setPaymentStatus(prev => ({ ...prev, [id]: checked }));
+    };
+
     return (
         <div className="flex flex-col gap-8">
             <div>
@@ -50,7 +83,12 @@ export default function SettingsPage() {
                                         <Label htmlFor={portal.id} className="text-base font-medium">{portal.name}</Label>
                                         <p className="text-sm text-muted-foreground">{portal.description}</p>
                                     </div>
-                                    <Switch id={portal.id} defaultChecked={portal.id === 'booking-com'} aria-label={`Toggle ${portal.name}`} />
+                                    <Switch 
+                                        id={portal.id} 
+                                        checked={integrationStatus[portal.id]}
+                                        onCheckedChange={(checked) => handleIntegrationChange(portal.id, checked)}
+                                        aria-label={`Toggle ${portal.name}`} 
+                                    />
                                 </div>
                             ))}
                         </CardContent>
@@ -69,7 +107,12 @@ export default function SettingsPage() {
                                         <Label htmlFor={method.id} className="text-base font-medium">{method.name}</Label>
                                         <p className="text-sm text-muted-foreground">{method.description}</p>
                                     </div>
-                                    <Switch id={method.id} defaultChecked={method.id === 'credit-card' || method.id === 'pay-at-hotel'} aria-label={`Toggle ${method.name}`} />
+                                    <Switch 
+                                        id={method.id} 
+                                        checked={paymentStatus[method.id]}
+                                        onCheckedChange={(checked) => handlePaymentChange(method.id, checked)}
+                                        aria-label={`Toggle ${method.name}`} 
+                                    />
                                 </div>
                             ))}
                         </CardContent>
