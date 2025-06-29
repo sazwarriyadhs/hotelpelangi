@@ -43,7 +43,7 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/80 px-4 backdrop-blur-sm lg:px-6 h-16 flex items-center">
         <Link href="/" className="flex items-center justify-center gap-2">
-          <Image src="/images/logo.png" alt="Serenity Logo" width={24} height={24} />
+          <Image src="/images/logo.png" alt="Serenity Logo" width={32} height={32} />
           <span className="font-headline text-2xl font-bold text-primary">Serenity</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">

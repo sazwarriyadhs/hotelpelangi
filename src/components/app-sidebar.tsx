@@ -11,7 +11,7 @@ function SerenityLogo() {
   const { state } = useSidebar();
   return (
     <Link href="/" className="flex items-center gap-3">
-      <Image src="/images/logo.png" alt="Serenity Logo" width={40} height={40} className="rounded-lg" />
+      <Image src="/images/logo.png" alt="Serenity Logo" width={48} height={48} className="rounded-lg" />
       <span
         className={cn(
           'font-headline text-2xl font-bold text-primary transition-opacity duration-200',
