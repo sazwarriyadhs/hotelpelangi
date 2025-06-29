@@ -11,8 +11,8 @@ import { SettingsProvider } from '@/contexts/settings-context';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Hotel } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
+import Image from 'next/image';
 
 const metadata: Metadata = {
   title: 'Serenity Hotel Management',
@@ -43,7 +43,7 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/80 px-4 backdrop-blur-sm lg:px-6 h-16 flex items-center">
         <Link href="/" className="flex items-center justify-center gap-2">
-          <Hotel className="h-6 w-6 text-primary" />
+          <Image src="/images/logo.png" alt="Serenity Logo" width={24} height={24} />
           <span className="font-headline text-2xl font-bold text-primary">Serenity</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
