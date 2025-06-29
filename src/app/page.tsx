@@ -49,22 +49,22 @@ const gallerySlides = [
     hint: "spa therapy room",
   },
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/gym.jpg",
     alt: "Hotel gym with equipment",
     hint: "hotel gym",
   },
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/balcony.jpg",
     alt: "View from a hotel room balcony",
     hint: "hotel balcony view",
   },
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/coctail.jpg",
     alt: "Cocktails by the pool",
     hint: "poolside cocktails",
   },
   {
-    src: "https://placehold.co/600x400.png",
+    src: "/images/conference.jpg",
     alt: "Hotel conference room",
     hint: "conference room",
   },
